@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerStats : MonoBehaviour {
 
@@ -6,9 +7,10 @@ public class PlayerStats : MonoBehaviour {
     public float currentHealth;
     public bool isDead;
 
-
+    NavMeshAgent agent;
     CharacterController controller;
     Animator anim;
+    ThirdPersonMovement movement;
     Collider[] rigColliders;
     Rigidbody[] rigRigidbodies;
 
@@ -16,6 +18,8 @@ public class PlayerStats : MonoBehaviour {
 
     void Start() {
         controller = GetComponent<CharacterController>();
+        movement = GetComponent<ThirdPersonMovement>();
+        agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         currentHealth = maxHealth;
         rigColliders = GetComponentsInChildren<Collider>();
@@ -30,8 +34,10 @@ public class PlayerStats : MonoBehaviour {
     void Update() {
 
         if (currentHealth <= 0f) {
-            isDead = true;
+           isDead = true;
            anim.enabled = false;
+           agent.enabled = false;
+            movement.enabled = false;
 
             foreach (Collider lider in rigColliders) {
                 lider.enabled = true;

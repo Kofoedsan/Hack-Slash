@@ -79,7 +79,6 @@ public class FreeFlyCamera : MonoBehaviour
 
     private PlayerStats deathCheck;
 
-
     private void Start()
     {
 
@@ -130,10 +129,7 @@ public class FreeFlyCamera : MonoBehaviour
 
         if(deathCheck.isDead) {
 
-       
-
-
-
+            
         if (!_active)
             return;
 
