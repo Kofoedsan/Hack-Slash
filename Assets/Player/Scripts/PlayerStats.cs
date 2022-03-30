@@ -52,4 +52,13 @@ public class PlayerStats : MonoBehaviour {
         }
 
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Crystal"))
+        {
+            Destroy(other.gameObject);
+           currentHealth += 20.00f;
+        }
+    }
 }
