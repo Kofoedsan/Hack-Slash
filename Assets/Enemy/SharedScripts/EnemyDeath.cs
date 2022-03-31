@@ -1,21 +1,31 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyDeath : MonoBehaviour {
    
     public bool isDead = false;
+    public float health;
     private NavMeshAgent agent;
     private Animator anim;
+    private EnemyCombat enemyCombat;
+
+    Collider[] rigColliders;
+    Rigidbody[] rigRigidbodies;
 
     private void Start() {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
+        enemyCombat = GetComponent<EnemyCombat>();
        
+        rigColliders = GetComponentsInChildren<Collider>();
+        rigRigidbodies = GetComponentsInChildren<Rigidbody>();
+
+
     }
     void Update() {
-        if (isDead == true) {
+        if (health <= 0.0f) {
+            enemyCombat.CanAttack = false;
 
             //StartCoroutine(RemoveCorpse());
 
@@ -25,6 +35,14 @@ public class EnemyDeath : MonoBehaviour {
 
             if (agent.enabled == true) {
                 agent.enabled = false;
+            }
+
+            foreach (Collider lider in rigColliders) {
+                lider.enabled = true;
+            }
+
+            foreach (Rigidbody rb in rigRigidbodies) {
+                rb.isKinematic = false;
             }
         }
     }

@@ -8,6 +8,7 @@ public class WeaponController : MonoBehaviour {
     public bool CanAttack = true;
     public float AttackCD = 1.0f;
     public bool IsAttacking = false;
+    public float WeaponDamage;
 
     private void Update() {
 
@@ -25,14 +26,15 @@ public class WeaponController : MonoBehaviour {
     }
 
     IEnumerator ResetAttackCD() {
-        StartCoroutine(ResetAttack());
+        //StartCoroutine(ResetAttack());
         yield return new WaitForSeconds(AttackCD);
         CanAttack = true;
-    }
-
-    IEnumerator ResetAttack() {
-        yield return new WaitForSeconds(1.7f);
         IsAttacking = false;
     }
+
+    //IEnumerator ResetAttack() {
+     //   yield return new WaitForSeconds(1.7f);
+    //    IsAttacking = false;
+   // }
 
 }
