@@ -110,13 +110,13 @@ ModelImporter:
     serializedVersion: 3
     human: []
     skeleton:
-    - name: paladin_prop_j_nordstrom@Sword And Shield Idle(Clone)
+    - name: idle(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Hips
-      parentName: paladin_prop_j_nordstrom@Sword And Shield Idle(Clone)
+      parentName: idle(Clone)
       position: {x: -0.00000075817104, y: 0.91279906, z: 0.000000488162}
       rotation: {x: 0.003175596, y: -0.013952337, z: -0.006396348, w: 0.9998772}
       scale: {x: 1, y: 1, z: 1}

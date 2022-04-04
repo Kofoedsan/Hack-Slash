@@ -110,13 +110,13 @@ ModelImporter:
     serializedVersion: 3
     human: []
     skeleton:
-    - name: paladin_prop_j_nordstrom@Sword And Shield Walk(Clone)
+    - name: forward_walk(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Hips
-      parentName: paladin_prop_j_nordstrom@Sword And Shield Walk(Clone)
+      parentName: forward_walk(Clone)
       position: {x: -0.0000004414469, y: 0.9174672, z: -0.000000526309}
       rotation: {x: -0.0101021845, y: -0.00076293683, z: -0.012938253, w: 0.999865}
       scale: {x: 1, y: 1, z: 1}
