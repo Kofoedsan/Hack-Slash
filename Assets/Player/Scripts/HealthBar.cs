@@ -5,6 +5,7 @@ public class HealthBar : MonoBehaviour
 {
     PlayerStats stats;
     private float currentHealth;
+    private float maxHealth;
     Text healthText;
 
     Image imgColor;
@@ -16,7 +17,7 @@ public class HealthBar : MonoBehaviour
     }
 
     void Update() {
-        healthText.text = stats.currentHealth.ToString()+"%";
+        healthText.text = stats.currentHealth.ToString()+"/"+ stats.maxHealth ;
 
         if (stats.currentHealth <= 80) {
             imgColor.color= new Color32(0, 255, 80, 100);

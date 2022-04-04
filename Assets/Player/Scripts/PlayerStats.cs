@@ -3,7 +3,7 @@ using UnityEngine.AI;
 
 public class PlayerStats : MonoBehaviour {
 
-    [SerializeField] float maxHealth = 100;
+    [SerializeField] public float maxHealth = 100;
     public float currentHealth;
     public bool isDead;
 
@@ -62,6 +62,7 @@ public class PlayerStats : MonoBehaviour {
             collectCrystalSound.Play();
             Destroy(other.gameObject);
             currentHealth += 20.00f;
+            maxHealth = currentHealth;
         }
 
         if (other.gameObject.CompareTag("SecretEntrance"))
