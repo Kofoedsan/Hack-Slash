@@ -75,6 +75,7 @@ public class PlayerStats : MonoBehaviour {
         {
             Destroy(other.gameObject);
             currentHealth = maxHealth;
+            collectCrystalSound.Play();
         }
     }
 

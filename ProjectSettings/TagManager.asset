@@ -8,6 +8,7 @@ TagManager:
   - Crystal
   - SpecialCrystal
   - CrystalParts
+  - SecretEntrance
   layers:
   - Default
   - TransparentFX
