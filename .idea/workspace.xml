@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9a77bd21-2c2e-4bd0-a656-5ca176daad8b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Enemy/EnemyAlien/AttackAnimations/Boxing1.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Enemy/EnemyAlien/AttackAnimations/Boxing2.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Enemy/EnemyAlien/AttackAnimations/Boxing2.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Enemy/EnemyAlien/AttackAnimations/Boxing3.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Enemy/EnemyAlien/AttackAnimations/Boxing3.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Enemy/EnemyAlien/AttackAnimations/Boxing4.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Enemy/EnemyAlien/AttackAnimations/Boxing4.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Enemy/EnemyAlien/AttackAnimations/Side Kick.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Enemy/EnemyAlien/AttackAnimations/Side Kick.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Enemy/EnemyAlien/AttackAnimations/Standing Melee Kick.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Enemy/EnemyAlien/AttackAnimations/Standing Melee Kick.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Enemy/EnemyAlien/IdleAnim.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Enemy/EnemyAlien/IdleAnim.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Enemy/EnemyAlien/MeleeRangeWalkAnim.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Enemy/EnemyAlien/MeleeRangeWalkAnim.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Enemy/EnemyAlien/RunAnim.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Enemy/EnemyAlien/RunAnim.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/EnemyAlien/AlienAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy/EnemyAlien/AlienAnimator.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/EnemyAlien/RunAnimation.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/EnemyAlien/RunAnimation.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/SharedScripts/EnemyCombat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy/SharedScripts/EnemyCombat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/SharedScripts/EnemyDeath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy/SharedScripts/EnemyDeath.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/SharedScripts/EnemyMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy/SharedScripts/EnemyMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/Scripts/WeaponCollisionDetector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player/Scripts/WeaponCollisionDetector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/Scripts/WeaponController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player/Scripts/WeaponController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/AlienEnemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/AlienEnemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PlayerKnight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PlayerKnight.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MyScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MyScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy/EnemyAlien/AttackAnimations.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MyScene.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/NavMesh.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/NavMesh.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy/EnemyAlien/AttackAnimations/Boxing1.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="27Kf1L493IKcRDHSkAaE9voGYP7" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9a77bd21-2c2e-4bd0-a656-5ca176daad8b" name="Changes" comment="" />
+      <created>1649073483494</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1649073483494</updated>
+      <workItem from="1649073485656" duration="6000" />
+    </task>
+    <servers />
+  </component>
+</project>

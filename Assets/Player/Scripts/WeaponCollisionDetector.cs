@@ -13,13 +13,12 @@ public class WeaponCollisionDetector : MonoBehaviour
        
     }
 
+
    
     private void OnTriggerEnter(Collider other) {
         if (other.tag == "Enemy" && wp.IsAttacking) {
-           
             enemyDeath = other.GetComponent<EnemyDeath>();
-        
-            enemyDeath.isDead = true;
+            enemyDeath.health = enemyDeath.health - wp.WeaponDamage;
 
         }
 
