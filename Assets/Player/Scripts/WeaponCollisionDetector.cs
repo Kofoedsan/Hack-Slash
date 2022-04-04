@@ -7,9 +7,10 @@ public class WeaponCollisionDetector : MonoBehaviour
     public WeaponController wp;
 
     private EnemyDeath enemyDeath;
-
+  
 
     private void Start() {
+       
     }
 
    
@@ -21,6 +22,8 @@ public class WeaponCollisionDetector : MonoBehaviour
             enemyDeath.isDead = true;
 
         }
+
+  
     }
 
 }

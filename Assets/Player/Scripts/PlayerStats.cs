@@ -13,7 +13,7 @@ public class PlayerStats : MonoBehaviour {
     ThirdPersonMovement movement;
     Collider[] rigColliders;
     Rigidbody[] rigRigidbodies;
-
+    [SerializeField] private AudioSource collectCrystalSound;
 
 
     void Start() {
@@ -24,7 +24,7 @@ public class PlayerStats : MonoBehaviour {
         currentHealth = maxHealth;
         rigColliders = GetComponentsInChildren<Collider>();
         rigRigidbodies = GetComponentsInChildren<Rigidbody>();
-
+        
 
         foreach (Rigidbody rb in rigRigidbodies) {
             rb.isKinematic = true;
@@ -55,10 +55,28 @@ public class PlayerStats : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
+
+
         if (other.gameObject.CompareTag("Crystal"))
         {
+            collectCrystalSound.Play();
             Destroy(other.gameObject);
-           currentHealth += 20.00f;
+            currentHealth += 20.00f;
+        }
+
+        if (other.gameObject.CompareTag("SecretEntrance"))
+        {
+
+            Destroy(other.gameObject);
+        
+        }
+
+        if (other.gameObject.CompareTag("SpecialCrystal"))
+        {
+            Destroy(other.gameObject);
+            currentHealth = maxHealth;
         }
     }
+
+
 }
