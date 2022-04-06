@@ -6,7 +6,7 @@ public class EnemyCombat : MonoBehaviour {
 
     public float damage;
     public bool CanAttack = true;
-    public float AttackCD = 1.0f;
+    public float AttackCD = 0.5f;
     public bool IsAttacking = false;
     Animator anim;
 
@@ -28,7 +28,7 @@ public class EnemyCombat : MonoBehaviour {
             int rInt = r.Next(0, 6);
 
             anim.SetTrigger("atk" + rInt);
-        Debug.Log("ran");
+            Debug.Log("ran");
 
             IsAttacking = true;
             CanAttack = false;
