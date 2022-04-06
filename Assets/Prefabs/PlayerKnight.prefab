@@ -431,6 +431,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4391012323309838165}
+  - component: {fileID: 4949267891210698297}
+  - component: {fileID: 2190184992210771950}
+  - component: {fileID: 6522450545802764470}
   m_Layer: 0
   m_Name: RightHand
   m_TagString: Untagged
@@ -458,6 +461,49 @@ Transform:
   m_Father: {fileID: 4391012325042166745}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4949267891210698297
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4391012323309838166}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.43736264, y: 0.11152227, z: 1.1772645}
+  m_Center: {x: 0.122346, y: -0.036603615, z: 0.35221308}
+--- !u!114 &2190184992210771950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4391012323309838166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31fea84b0d38e7f4a856c050e2eb49fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Paladin_J_Nordstrom_Sword: {fileID: 4391012323309838166}
+  CanAttack: 1
+  AttackCD: 1
+  IsAttacking: 0
+  WeaponDamage: 50
+--- !u!114 &6522450545802764470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4391012323309838166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92afafb6e3b907242b739e418ac886f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wp: {fileID: 2190184992210771950}
 --- !u!1 &4391012323341833435
 GameObject:
   m_ObjectHideFlags: 0
@@ -1061,9 +1107,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4391012323982547790}
   - component: {fileID: 4391012323982547786}
-  - component: {fileID: 4391012323982547788}
-  - component: {fileID: 4391012323982547789}
-  - component: {fileID: 4391012323982547787}
   m_Layer: 0
   m_Name: Paladin_J_Nordstrom_Sword
   m_TagString: Untagged
@@ -1138,49 +1181,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.06104052, y: -0.006658733, z: 0.3036496}
     m_Extent: {x: 0.15018207, y: 0.045836862, z: 0.50709116}
   m_DirtyAABB: 0
---- !u!114 &4391012323982547788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4391012323982547791}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31fea84b0d38e7f4a856c050e2eb49fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Paladin_J_Nordstrom_Sword: {fileID: 4391012323982547791}
-  CanAttack: 1
-  AttackCD: 1
-  IsAttacking: 0
-  WeaponDamage: 50
---- !u!114 &4391012323982547789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4391012323982547791}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92afafb6e3b907242b739e418ac886f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wp: {fileID: 4391012323982547788}
---- !u!65 &4391012323982547787
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4391012323982547791}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.3003652, y: 0.09282928, z: 1.014286}
-  m_Center: {x: 0.79657525, y: 1.4115678, z: 0.24661776}
 --- !u!1 &4391012324045377060
 GameObject:
   m_ObjectHideFlags: 0
