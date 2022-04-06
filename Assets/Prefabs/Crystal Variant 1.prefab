@@ -1,0 +1,145 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5500260556580685512
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 73786559638966806, guid: 43f626621fd460048b67b9f51ae4a9b8, type: 3}
+      propertyPath: m_TagString
+      value: Crystal
+      objectReference: {fileID: 0}
+    - target: {fileID: 314861240775797664, guid: 43f626621fd460048b67b9f51ae4a9b8, type: 3}
+      propertyPath: m_TagString
+      value: Crystal
+      objectReference: {fileID: 0}
+    - target: {fileID: 2167193552891120175, guid: 43f626621fd460048b67b9f51ae4a9b8, type: 3}
+      propertyPath: m_TagString
+      value: Crystal
+      objectReference: {fileID: 0}
+    - target: {fileID: 2851125085392843081, guid: 43f626621fd460048b67b9f51ae4a9b8, type: 3}
+      propertyPath: m_TagString
+      value: Crystal
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188519627512175025, guid: 43f626621fd460048b67b9f51ae4a9b8, type: 3}
+      propertyPath: m_TagString
+      value: Crystal
+      objectReference: {fileID: 0}
+    - target: {fileID: 3332168662382855405, guid: 43f626621fd460048b67b9f51ae4a9b8, type: 3}
+      propertyPath: m_TagString
+      value: Crystal
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840762011252976904, guid: 43f626621fd460048b67b9f51ae4a9b8, type: 3}
+      propertyPath: m_TagString
+      value: Crystal
+      objectReference: {fileID: 0}
+    - target: {fileID: 5892811025732356404, guid: 43f626621fd460048b67b9f51ae4a9b8, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5892811025732356404, guid: 43f626621fd460048b67b9f51ae4a9b8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5892811025732356404, guid: 43f626621fd460048b67b9f51ae4a9b8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5892811025732356404, guid: 43f626621fd460048b67b9f51ae4a9b8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5892811025732356404, guid: 43f626621fd460048b67b9f51ae4a9b8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 93.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 5892811025732356404, guid: 43f626621fd460048b67b9f51ae4a9b8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 5892811025732356404, guid: 43f626621fd460048b67b9f51ae4a9b8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 133.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 5892811025732356404, guid: 43f626621fd460048b67b9f51ae4a9b8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5892811025732356404, guid: 43f626621fd460048b67b9f51ae4a9b8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5892811025732356404, guid: 43f626621fd460048b67b9f51ae4a9b8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5892811025732356404, guid: 43f626621fd460048b67b9f51ae4a9b8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5892811025732356404, guid: 43f626621fd460048b67b9f51ae4a9b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5892811025732356404, guid: 43f626621fd460048b67b9f51ae4a9b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5892811025732356404, guid: 43f626621fd460048b67b9f51ae4a9b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6419388307868690865, guid: 43f626621fd460048b67b9f51ae4a9b8, type: 3}
+      propertyPath: m_TagString
+      value: Crystal
+      objectReference: {fileID: 0}
+    - target: {fileID: 6524775522469680014, guid: 43f626621fd460048b67b9f51ae4a9b8, type: 3}
+      propertyPath: m_Name
+      value: Crystal
+      objectReference: {fileID: 0}
+    - target: {fileID: 6524775522469680014, guid: 43f626621fd460048b67b9f51ae4a9b8, type: 3}
+      propertyPath: m_TagString
+      value: Crystal
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102889528729563208, guid: 43f626621fd460048b67b9f51ae4a9b8, type: 3}
+      propertyPath: m_TagString
+      value: Crystal
+      objectReference: {fileID: 0}
+    - target: {fileID: 7311207405002728421, guid: 43f626621fd460048b67b9f51ae4a9b8, type: 3}
+      propertyPath: m_TagString
+      value: Crystal
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722367605295703805, guid: 43f626621fd460048b67b9f51ae4a9b8, type: 3}
+      propertyPath: m_TagString
+      value: Crystal
+      objectReference: {fileID: 0}
+    - target: {fileID: 8830434818333972755, guid: 43f626621fd460048b67b9f51ae4a9b8, type: 3}
+      propertyPath: m_TagString
+      value: Crystal
+      objectReference: {fileID: 0}
+    - target: {fileID: 8999906623585855850, guid: 43f626621fd460048b67b9f51ae4a9b8, type: 3}
+      propertyPath: m_TagString
+      value: CrystalParts
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 43f626621fd460048b67b9f51ae4a9b8, type: 3}
+--- !u!1 &1646189982453175622 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6524775522469680014, guid: 43f626621fd460048b67b9f51ae4a9b8, type: 3}
+  m_PrefabInstance: {fileID: 5500260556580685512}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &4188699834442581550
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646189982453175622}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.4592285, y: 4.0760684, z: 3.4515076}
+  m_Center: {x: 0.06652832, y: 0.0799377, z: -0.013870239}

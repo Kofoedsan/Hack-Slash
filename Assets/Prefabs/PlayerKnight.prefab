@@ -1061,9 +1061,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4391012323982547790}
   - component: {fileID: 4391012323982547786}
-  - component: {fileID: 4391012323982547787}
   - component: {fileID: 4391012323982547788}
   - component: {fileID: 4391012323982547789}
+  - component: {fileID: 4391012323982547787}
   m_Layer: 0
   m_Name: Paladin_J_Nordstrom_Sword
   m_TagString: Untagged
@@ -1138,19 +1138,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.06104052, y: -0.006658733, z: 0.3036496}
     m_Extent: {x: 0.15018207, y: 0.045836862, z: 0.50709116}
   m_DirtyAABB: 0
---- !u!65 &4391012323982547787
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4391012323982547791}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.3003652, y: 0.09282928, z: 1.014286}
-  m_Center: {x: 0.79657525, y: 1.4115678, z: 0.24661776}
 --- !u!114 &4391012323982547788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1181,6 +1168,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wp: {fileID: 4391012323982547788}
+--- !u!65 &4391012323982547787
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4391012323982547791}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3003652, y: 0.09282928, z: 1.014286}
+  m_Center: {x: 0.79657525, y: 1.4115678, z: 0.24661776}
 --- !u!1 &4391012324045377060
 GameObject:
   m_ObjectHideFlags: 0
@@ -3429,6 +3429,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   isDead: 0
+  collectCrystalSound: {fileID: 0}
 --- !u!195 &5223902097632708565
 NavMeshAgent:
   m_ObjectHideFlags: 0
