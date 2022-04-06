@@ -13,13 +13,14 @@ public class EnemyMovement : MonoBehaviour {
     public Transform Player;
     private float ChasingSpeed;
 
-    private float acceleration = 2.0f;
+    private float acceleration = 1.0f;
     private float decceleration = 1.0f;
 
     [SerializeField] private float aggroRangeRun;
     [SerializeField] private float RunSpeed;
     [SerializeField] private float WalkSpeed;
     [SerializeField] private float aggroRangeWalk;
+
 
     
     Rigidbody[] rigRigidbodies;
@@ -40,14 +41,11 @@ public class EnemyMovement : MonoBehaviour {
 }
 
     void Update() {
-
-
-
         if (navMeshAgent.enabled == true) {
 
-            if (Vector3.Distance(transform.position, Player.position) < aggroRangeRun) {
+            if (Vector3.Distance(transform.position, Player.position) < aggroRangeRun && Vector3.Distance(transform.position, Player.position) > aggroRangeWalk) {
 
-                if (ChasingSpeed < 1) {
+                if (ChasingSpeed < 1.0f) {
                     ChasingSpeed += Time.deltaTime * acceleration;
                 }
 
@@ -60,7 +58,7 @@ public class EnemyMovement : MonoBehaviour {
             if (Vector3.Distance(transform.position, Player.position) < aggroRangeWalk) {
 
 
-                if (ChasingSpeed > 1) {
+                if (ChasingSpeed > 0.5f) {
                     ChasingSpeed -= Time.deltaTime * decceleration;
                 }
 
@@ -72,16 +70,16 @@ public class EnemyMovement : MonoBehaviour {
                 Chase();
             }
 
-            if (Vector3.Distance(transform.position, Player.position) > aggroRangeRun) {
+             if (Vector3.Distance(transform.position, Player.position) > aggroRangeRun) {
                 if (ChasingSpeed > 0.0f) {
-                    ChasingSpeed -= Time.deltaTime * decceleration;
-                }
-
+                     ChasingSpeed -= Time.deltaTime * decceleration;
+            }
+        
 
               
-                Vector3 MyVector3 = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
+               Vector3 MyVector3 = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
 
-                animator.SetFloat(ChasingSpeedHash, ChasingSpeed);
+               animator.SetFloat(ChasingSpeedHash, ChasingSpeed);
                 navMeshAgent.SetDestination(MyVector3);
 
             }

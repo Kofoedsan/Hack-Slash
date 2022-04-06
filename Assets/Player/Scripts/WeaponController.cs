@@ -8,6 +8,7 @@ public class WeaponController : MonoBehaviour {
     public bool CanAttack = true;
     public float AttackCD = 1.0f;
     public bool IsAttacking = false;
+    public bool IsBlocking = false;
     public float WeaponDamage;
 
     private void Update() {
@@ -17,12 +18,32 @@ public class WeaponController : MonoBehaviour {
                 Attack();
             }
         }
+
+        if (Input.GetMouseButtonDown(1)) {
+            if (!IsAttacking) {
+                Block();
+            }
+        }
+
+        if (Input.GetMouseButtonUp(1)) {
+            IsAttacking = false;
+            CanAttack = true;
+            IsBlocking = false;
+        }
+
+
     }
 
     public void Attack() {
         IsAttacking = true;
         CanAttack = false;
         StartCoroutine(ResetAttackCD());
+    }
+
+    public void Block() {
+        IsAttacking = false;
+        CanAttack = false;
+        IsBlocking = true;
     }
 
     IEnumerator ResetAttackCD() {

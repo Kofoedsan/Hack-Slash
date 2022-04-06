@@ -10,6 +10,7 @@ TagManager:
   - CrystalParts
   - SecretEntrance
   - Walls
+  - Shield
   layers:
   - Default
   - TransparentFX
