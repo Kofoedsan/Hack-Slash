@@ -24,6 +24,7 @@ public class AnimationScript : MonoBehaviour{
         bool sprint = Input.GetKey("left shift");
         bool space = Input.GetKey("space");
         bool mouse0 = Input.GetMouseButtonDown(0);
+        bool mouse1 = Input.GetMouseButtonDown(1);
 
 
         if (Input.GetKeyDown(KeyCode.Space)) {
@@ -32,6 +33,11 @@ public class AnimationScript : MonoBehaviour{
         }
 
         if (mouse0) {
+            // animator.SetTrigger("Jump");
+            animator.Play("SwordAttack");
+        }
+
+        if (mouse1) {
             // animator.SetTrigger("Jump");
             animator.Play("SwordAttack");
         }

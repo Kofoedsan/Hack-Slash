@@ -9,12 +9,6 @@ public class WeaponCollisionDetector : MonoBehaviour
     private EnemyDeath enemyDeath;
   
 
-    private void Start() {
-       
-    }
-
-
-   
     private void OnTriggerEnter(Collider other) {
         if (other.tag == "Enemy" && wp.IsAttacking) {
             enemyDeath = other.GetComponent<EnemyDeath>();

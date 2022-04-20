@@ -21,6 +21,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
 
     int isJumpingHash;
     int isSlashingHash;
+    int isBlockingHash;
 
     void Start()
     {
@@ -35,6 +36,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
 
         isJumpingHash = Animator.StringToHash("Jump");
         isSlashingHash = Animator.StringToHash("Slash");
+        isBlockingHash = Animator.StringToHash("Block");
 
    
       
@@ -236,9 +238,11 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         //fighting and slashing
         bool jumping = animator.GetBool("Jump");
         bool slashing = animator.GetBool("Slash");
+        bool blocking = animator.GetBool("Block");
 
         bool spacebarPressed = Input.GetKey(KeyCode.Space);
         bool rightMouse = Input.GetKey(KeyCode.Mouse0);
+        bool leftMouse = Input.GetKey(KeyCode.Mouse1);
 
 
 
@@ -276,6 +280,15 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         if (slashing && !rightMouse)
         {
             animator.SetBool(isSlashingHash, false);
+        }
+
+        if (!blocking && leftMouse) {
+
+            animator.SetBool(isBlockingHash, true);
+
+        }
+        if (blocking && !leftMouse) {
+            animator.SetBool(isBlockingHash, false);
         }
 
 

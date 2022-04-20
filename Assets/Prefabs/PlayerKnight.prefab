@@ -1061,9 +1061,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4391012323982547790}
   - component: {fileID: 4391012323982547786}
-  - component: {fileID: 4391012323982547788}
-  - component: {fileID: 4391012323982547789}
-  - component: {fileID: 4391012323982547787}
   m_Layer: 0
   m_Name: Paladin_J_Nordstrom_Sword
   m_TagString: Untagged
@@ -1138,49 +1135,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.06104052, y: -0.006658733, z: 0.3036496}
     m_Extent: {x: 0.15018207, y: 0.045836862, z: 0.50709116}
   m_DirtyAABB: 0
---- !u!114 &4391012323982547788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4391012323982547791}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31fea84b0d38e7f4a856c050e2eb49fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Paladin_J_Nordstrom_Sword: {fileID: 4391012323982547791}
-  CanAttack: 1
-  AttackCD: 1
-  IsAttacking: 0
-  WeaponDamage: 50
---- !u!114 &4391012323982547789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4391012323982547791}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92afafb6e3b907242b739e418ac886f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wp: {fileID: 4391012323982547788}
---- !u!65 &4391012323982547787
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4391012323982547791}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.3003652, y: 0.09282928, z: 1.014286}
-  m_Center: {x: 0.79657525, y: 1.4115678, z: 0.24661776}
 --- !u!1 &4391012324045377060
 GameObject:
   m_ObjectHideFlags: 0
@@ -1703,6 +1657,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4391012324349379029}
+  - component: {fileID: 1688193320293183144}
+  - component: {fileID: 5648382742966918606}
   m_Layer: 0
   m_Name: Shield_joint
   m_TagString: Untagged
@@ -1724,6 +1680,35 @@ Transform:
   m_Father: {fileID: 4391012324102241253}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1688193320293183144
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4391012324349379030}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9007158, y: 0.25891438, z: 2.5386605}
+  m_Center: {x: -0.16505624, y: -0.009830549, z: -0.16269141}
+--- !u!208 &5648382742966918606
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4391012324349379030}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.950358, y: 0.1294572, z: 1.2693305}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 0
+  m_Center: {x: -0.1650562, y: -0.009830549, z: -0.1626914}
+  m_TimeToStationary: 0.5
 --- !u!1 &4391012324408518619
 GameObject:
   m_ObjectHideFlags: 0
@@ -2530,6 +2515,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4391012324931540160}
+  - component: {fileID: 9029003630716173290}
+  - component: {fileID: 8165775662731725979}
+  - component: {fileID: 823469271182254219}
   m_Layer: 0
   m_Name: Sword_joint
   m_TagString: Untagged
@@ -2551,6 +2539,50 @@ Transform:
   m_Father: {fileID: 4391012323309838165}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9029003630716173290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4391012324931540161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92afafb6e3b907242b739e418ac886f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wp: {fileID: 8165775662731725979}
+--- !u!114 &8165775662731725979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4391012324931540161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31fea84b0d38e7f4a856c050e2eb49fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Paladin_J_Nordstrom_Sword: {fileID: 4391012324931540161}
+  CanAttack: 1
+  AttackCD: 1
+  IsAttacking: 0
+  IsBlocking: 0
+  WeaponDamage: 25
+--- !u!65 &823469271182254219
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4391012324931540161}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.43736264, y: 0.111522615, z: 1.4202459}
+  m_Center: {x: 0.12234601, y: -0.036603652, z: 0.47370583}
 --- !u!1 &4391012324941239998
 GameObject:
   m_ObjectHideFlags: 0
