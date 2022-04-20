@@ -8,7 +8,6 @@ public class EnemyCombat : MonoBehaviour {
     public bool CanAttack = true;
     public float AttackCD;
     public bool IsAttacking = false;
-    public bool colliding = false;
     Animator anim;
 
     WeaponController weaponController;
@@ -18,28 +17,28 @@ public class EnemyCombat : MonoBehaviour {
         weaponController = GameObject.Find("PlayerKnight/Hips/Spine/Spine1/Spine2/RightShoulder/RightArm/RightForeArm/RightHand/Sword_joint").GetComponent<WeaponController>();
     }
 
-        private void OnTriggerEnter(Collider other) {
-        colliding = true;
+    private void OnTriggerStay(Collider other) {
 
-        // while (colliding == true) {
+        Debug.Log(other.tag);
 
-            if (other.tag == "Player" && CanAttack) {
+        if (other.tag == "Player" && CanAttack) {
+            Attack();
+        }
 
-                Attack();
-            }
+        if (other.tag == "Shield" && !weaponController.IsBlocking && CanAttack) {
+            Attack();
+        }
 
-            if (other.tag == "Shield" && !weaponController.IsBlocking && CanAttack) {
-                Attack();
-            }
+         if (other.tag == "Shield" && weaponController.IsBlocking && CanAttack) {
 
-            if (other.tag == "Shield" && weaponController.IsBlocking && CanAttack) {
-                StartCoroutine(ResetAttackCD());
-            }
-        // }
+            AttackBlocked();
+
+         }
+
     }
 
+
     private void OnTriggerExit(Collider other) {
-        colliding = false;
     }
 
 
@@ -53,7 +52,17 @@ public class EnemyCombat : MonoBehaviour {
             player.currentHealth = player.currentHealth - damage;
             StartCoroutine(ResetAttackCD());
         }
-        IEnumerator ResetAttackCD() {
+
+    public void AttackBlocked() {
+        System.Random r = new System.Random();
+        int rInt = r.Next(0, 6);
+        anim.SetTrigger("atk" + rInt);
+        IsAttacking = true;
+        CanAttack = false;
+        StartCoroutine(ResetAttackCD());
+    }
+
+    IEnumerator ResetAttackCD() {
             yield return new WaitForSeconds(AttackCD);
             CanAttack = true;
             IsAttacking = false;
