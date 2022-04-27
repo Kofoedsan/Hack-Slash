@@ -33,7 +33,7 @@ public class PlayerStats : MonoBehaviour {
 
     void Update() {
 
-        if (currentHealth <= 0f) {
+        if (currentHealth <= 0.0f) {
            isDead = true;
            anim.enabled = false;
            agent.enabled = false;
@@ -78,6 +78,21 @@ public class PlayerStats : MonoBehaviour {
             currentHealth = maxHealth;
             collectCrystalSound.Play();
         }
+
+        if (other.gameObject.CompareTag("Spike"))
+        {
+
+            currentHealth = 0.0f;
+            
+        }
+
+        if (other.gameObject.CompareTag("Saw"))
+        {
+
+            currentHealth = 0.0f;
+
+        }
+
     }
 
 

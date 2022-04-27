@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WallMaterial
+  m_Name: MiddleHall
   m_Shader: {fileID: -6465566751694194690, guid: 9a4730f6d8c41fc4ba54c29ea27943dd, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -32,12 +32,12 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_1be0cf08775442b19a199d5ac32b8870: 0.7
+    - Vector1_1be0cf08775442b19a199d5ac32b8870: 0.5
     - Vector1_5e43b8dcc61a47ed907f93fdd67c8fb1: 0.6
     - Vector1_728e5fe00c454ce7a0cf10c8d1434bc8: 0.462
     - Vector1_d0bc45cf9e894ee78ca2f727ca4032d3: 0.576
     m_Colors:
-    - Color_5c6f5a3e1374493c8745bdd48c80da75: {r: 1, g: 0, b: 0, a: 1}
-    - Color_815b91cec45743f2b59627dc1e661716: {r: 0.4245283, g: 0.19891419, b: 0.19891419, a: 1}
-    - Color_a2d0c34e3f6741e2a789b12adb5834b0: {r: 0.21698111, g: 0.15693602, b: 0.15693602, a: 1}
+    - Color_5c6f5a3e1374493c8745bdd48c80da75: {r: 4, g: 0, b: 0, a: 1}
+    - Color_815b91cec45743f2b59627dc1e661716: {r: 0.7490196, g: 0.35686275, b: 0.35686275, a: 1}
+    - Color_a2d0c34e3f6741e2a789b12adb5834b0: {r: 0.43137255, g: 0.3137255, b: 0.3137255, a: 1}
   m_BuildTextureStacks: []

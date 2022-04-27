@@ -11,7 +11,8 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     [SerializeField] private float acceleration = 2.0f;
     [SerializeField] private float decceleration = 2.0f;
     [SerializeField] private float maximumWalkVelocity = 0.5f;
-    [SerializeField] private float maximumRunVelocity = 2.0f;    
+    [SerializeField] private float maximumRunVelocity = 2.0f;
+    [SerializeField] private AudioSource swingSword;
 
     Transform player;
 
@@ -272,14 +273,16 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         }
 
         if (!slashing && rightMouse)
-        { 
+        {
             
             animator.SetBool(isSlashingHash, true);
 
         }
         if (slashing && !rightMouse)
         {
+            
             animator.SetBool(isSlashingHash, false);
+            swingSword.Play();
         }
 
         if (!blocking && leftMouse) {

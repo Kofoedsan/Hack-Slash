@@ -11,6 +11,8 @@ TagManager:
   - SecretEntrance
   - Walls
   - Shield
+  - Spike
+  - Saw
   layers:
   - Default
   - TransparentFX

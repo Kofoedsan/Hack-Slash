@@ -47,7 +47,18 @@ public class EnemyDeath : MonoBehaviour {
         }
     }
 
-    IEnumerator RemoveCorpse() {
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Spike"))
+        {
+
+            health = 0.0f;
+
+        }
+    }
+
+IEnumerator RemoveCorpse() {
         yield return new WaitForSeconds(3);
         //Destroy(gameObject);
         isDead = false;
