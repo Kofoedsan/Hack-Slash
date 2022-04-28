@@ -19,8 +19,6 @@ public class EnemyCombat : MonoBehaviour {
 
     private void OnTriggerStay(Collider other) {
 
-        Debug.Log(other.tag);
-
         if (other.tag == "Player" && CanAttack) {
             Attack();
         }

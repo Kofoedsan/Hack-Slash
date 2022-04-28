@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class TwoDimensionalAnimationStateController : MonoBehaviour {
     Animator animator;
-    Animation anim;
-    //Animation animation;
+    WeaponController weaponController;
     float velocityX = 0.0f;
     float velocityZ = 0.0f;
     [SerializeField] private float acceleration = 2.0f;
@@ -22,13 +21,15 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour {
     int isJumpingHash;
     int isSlashingHash;
     int isBlockingHash;
+    bool slashing = false;
 
     void Start() {
         //search the gameobject this script is attached to and get the animator component 
         animator = GetComponent<Animator>();
 
         player = GetComponent<Transform>();
-        anim = GetComponent<Animation>();
+
+        weaponController = GetComponentInChildren<WeaponController>();
 
         // increase performance
         VelocityZHash = Animator.StringToHash("Velocity Z");
@@ -208,8 +209,9 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour {
 
         //fighting and slashing
         bool jumping = animator.GetBool("Jump");
-        bool slashing = animator.GetBool("Slash");
-        bool blocking = animator.GetBool("Block");
+        //bool slashing = animator.GetBool("Slash");
+        //bool blocking = animator.GetBool("Block");
+        
 
         bool spacebarPressed = Input.GetKey(KeyCode.Space);
         bool rightMouse = Input.GetKey(KeyCode.Mouse0);
@@ -229,8 +231,6 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour {
             }
         }
 
-
-
         if (!jumping && spacebarPressed) {
 
             animator.SetBool(isJumpingHash, true);
@@ -241,15 +241,23 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour {
             animator.SetBool(isJumpingHash, false);
         }
 
-        if (!slashing && rightMouse) {
-
-            animator.SetBool(isSlashingHash, true);
-
+        if (rightMouse && !forwardPressed) {
+            if (!slashing) {
+                animator.SetLayerWeight(2, 0.0f);
+                animator.SetBool(isSlashingHash, true);
+                slashing = true;
+                StartCoroutine(ResetAttackCD());
+            }
         }
-        if (slashing && !rightMouse) {
-            animator.SetBool(isSlashingHash, false);
-        }
 
+        if (rightMouse && forwardPressed) {
+            if (!slashing) {
+                animator.SetBool(isSlashingHash, false);
+                animator.SetLayerWeight(2, 1.0f);
+                slashing = true;
+                StartCoroutine(ResetAttackCD());
+            }
+        }
 
         if (leftMouseDown && !forwardPressed) {
             animator.SetLayerWeight(1, 0.0f);
@@ -261,9 +269,17 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour {
             animator.SetBool(isBlockingHash, false);
         }
 
-            if (!leftMouseDown) {
+        if (!leftMouseDown) {
             animator.SetLayerWeight(1, 0.0f);
             animator.SetBool(isBlockingHash, false);
+        }
+
+        IEnumerator ResetAttackCD() {
+            yield return new WaitForSeconds(weaponController.AttackCD);
+            animator.SetLayerWeight(2, 0.0f);
+            animator.SetBool(isSlashingHash, false);
+            slashing = false;
+
         }
 
 

@@ -6,7 +6,7 @@ public class WeaponController : MonoBehaviour {
     public GameObject Paladin_J_Nordstrom_Sword;
 
     public bool CanAttack = true;
-    public float AttackCD = 1.0f;
+    public float AttackCD = 1.2f;
     public bool IsAttacking = false;
     public bool IsBlocking = false;
     public float WeaponDamage;

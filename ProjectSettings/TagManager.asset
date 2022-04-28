@@ -11,6 +11,7 @@ TagManager:
   - SecretEntrance
   - Walls
   - Shield
+  - MaxHpCrystal
   layers:
   - Default
   - TransparentFX

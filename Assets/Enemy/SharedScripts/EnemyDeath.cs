@@ -27,8 +27,6 @@ public class EnemyDeath : MonoBehaviour {
         if (health <= 0.0f) {
             enemyCombat.CanAttack = false;
 
-            //StartCoroutine(RemoveCorpse());
-
             if (anim.enabled == true) {
                 anim.enabled = false;
             }
@@ -44,13 +42,14 @@ public class EnemyDeath : MonoBehaviour {
             foreach (Rigidbody rb in rigRigidbodies) {
                 rb.isKinematic = false;
             }
+            isDead = true;
+            StartCoroutine(RemoveCorpse());
         }
     }
 
     IEnumerator RemoveCorpse() {
-        yield return new WaitForSeconds(3);
-        //Destroy(gameObject);
-        isDead = false;
+        yield return new WaitForSeconds(10);
+        Destroy(gameObject);
        
     }
 
