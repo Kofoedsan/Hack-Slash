@@ -97,7 +97,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6524775522469680014, guid: 43f626621fd460048b67b9f51ae4a9b8, type: 3}
       propertyPath: m_Name
-      value: Crystal
+      value: Crystal Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6524775522469680014, guid: 43f626621fd460048b67b9f51ae4a9b8, type: 3}
       propertyPath: m_TagString
@@ -155,7 +155,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fa5bfe488e476b847984af12128c70e7, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.6
+  m_Volume: 0.305
   m_Pitch: 1
   Loop: 1
   Mute: 0
