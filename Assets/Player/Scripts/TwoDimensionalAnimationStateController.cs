@@ -212,7 +212,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour {
         bool jumping = animator.GetBool("Jump");
         //bool slashing = animator.GetBool("Slash");
         //bool blocking = animator.GetBool("Block");
-        
+
 
         bool spacebarPressed = Input.GetKey(KeyCode.Space);
         bool rightMouse = Input.GetKey(KeyCode.Mouse0);
@@ -244,26 +244,17 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour {
 
         if (rightMouse && !forwardPressed) {
             if (!slashing) {
+                swingSword.Play();
                 animator.SetLayerWeight(2, 0.0f);
                 animator.SetBool(isSlashingHash, true);
                 slashing = true;
                 StartCoroutine(ResetAttackCD());
             }
-        if (!slashing && rightMouse)
-        {
-            
-            animator.SetBool(isSlashingHash, true);
-
-        }
-        if (slashing && !rightMouse)
-        {
-            
-            animator.SetBool(isSlashingHash, false);
-            swingSword.Play();
         }
 
         if (rightMouse && forwardPressed) {
             if (!slashing) {
+                swingSword.Play();
                 animator.SetBool(isSlashingHash, false);
                 animator.SetLayerWeight(2, 1.0f);
                 slashing = true;
