@@ -9,6 +9,7 @@ public class EnemyDeath : MonoBehaviour {
     private NavMeshAgent agent;
     private Animator anim;
     private EnemyCombat enemyCombat;
+    private AlienWithSwordCombat enemyCombatSword;
 
     Collider[] rigColliders;
     Rigidbody[] rigRigidbodies;
@@ -17,7 +18,9 @@ public class EnemyDeath : MonoBehaviour {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         enemyCombat = GetComponent<EnemyCombat>();
-       
+
+        enemyCombatSword = GetComponent<AlienWithSwordCombat>();
+
         rigColliders = GetComponentsInChildren<Collider>();
         rigRigidbodies = GetComponentsInChildren<Rigidbody>();
 
@@ -25,9 +28,13 @@ public class EnemyDeath : MonoBehaviour {
     }
     void Update() {
         if (health <= 0.0f) {
-            enemyCombat.CanAttack = false;
 
-            //StartCoroutine(RemoveCorpse());
+            try {
+                enemyCombat.CanAttack = false;
+            } catch {
+                enemyCombatSword.CanAttack = false;
+            }
+
 
             if (anim.enabled == true) {
                 anim.enabled = false;
@@ -44,9 +51,15 @@ public class EnemyDeath : MonoBehaviour {
             foreach (Rigidbody rb in rigRigidbodies) {
                 rb.isKinematic = false;
             }
+            isDead = true;
+            StartCoroutine(RemoveCorpse());
         }
     }
 
+    IEnumerator RemoveCorpse() {
+        yield return new WaitForSeconds(10);
+        Destroy(gameObject);
+	}
 
     void OnTriggerEnter(Collider other)
     {
@@ -58,11 +71,6 @@ public class EnemyDeath : MonoBehaviour {
         }
     }
 
-IEnumerator RemoveCorpse() {
-        yield return new WaitForSeconds(3);
-        //Destroy(gameObject);
-        isDead = false;
-       
-    }
+
 
 }

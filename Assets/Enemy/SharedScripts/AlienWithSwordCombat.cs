@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using System;
 
-public class EnemyCombat : MonoBehaviour {
+public class AlienWithSwordCombat : MonoBehaviour {
 
     public float damage;
     public bool CanAttack = true;
@@ -41,9 +41,8 @@ public class EnemyCombat : MonoBehaviour {
 
 
     public void Attack() {
-            System.Random r = new System.Random();
-            int rInt = r.Next(0, 6);
-            anim.SetTrigger("atk" + rInt);
+            anim.SetLayerWeight(1, 1.0f);
+           // anim.SetTrigger("atk0");
             IsAttacking = true;
             CanAttack = false;
             PlayerStats player = GameObject.Find("PlayerKnight").GetComponent<PlayerStats>();
@@ -52,9 +51,8 @@ public class EnemyCombat : MonoBehaviour {
         }
 
     public void AttackBlocked() {
-        System.Random r = new System.Random();
-        int rInt = r.Next(0, 6);
-        anim.SetTrigger("atk" + rInt);
+        anim.SetLayerWeight(1, 1.0f);
+        //anim.SetTrigger("atk0");
         IsAttacking = true;
         CanAttack = false;
         StartCoroutine(ResetAttackCD());
@@ -64,6 +62,7 @@ public class EnemyCombat : MonoBehaviour {
             yield return new WaitForSeconds(AttackCD);
             CanAttack = true;
             IsAttacking = false;
+            anim.SetLayerWeight(1, 0.0f);
     }
 
 }

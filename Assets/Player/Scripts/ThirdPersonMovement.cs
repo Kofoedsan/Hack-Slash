@@ -7,7 +7,6 @@ public class ThirdPersonMovement : MonoBehaviour
     public CharacterController controller;
     public Transform cam;
 
-
     public float walkSpeed = 4.0f;
     public float runSpeed = 6.0f;
     public float turnSmoothTime = 0.1f;
@@ -15,7 +14,6 @@ public class ThirdPersonMovement : MonoBehaviour
     float turnSmoothVelocity;
 
 
-    // Update is called once per frame
     void Update()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");

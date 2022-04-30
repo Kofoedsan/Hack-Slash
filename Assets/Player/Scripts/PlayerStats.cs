@@ -7,7 +7,6 @@ public class PlayerStats : MonoBehaviour {
     public float currentHealth;
     public bool isDead;
 
-    NavMeshAgent agent;
     CharacterController controller;
     Animator anim;
     ThirdPersonMovement movement;
@@ -19,7 +18,6 @@ public class PlayerStats : MonoBehaviour {
     void Start() {
         controller = GetComponent<CharacterController>();
         movement = GetComponent<ThirdPersonMovement>();
-        agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         currentHealth = maxHealth;
         rigColliders = GetComponentsInChildren<Collider>();
@@ -36,7 +34,6 @@ public class PlayerStats : MonoBehaviour {
         if (currentHealth <= 0.0f) {
            isDead = true;
            anim.enabled = false;
-           agent.enabled = false;
             movement.enabled = false;
 
             foreach (Collider lider in rigColliders) {
@@ -63,6 +60,12 @@ public class PlayerStats : MonoBehaviour {
             Destroy(other.gameObject);
             currentHealth += 20.00f;
             maxHealth = currentHealth;
+        }
+
+        if (other.gameObject.CompareTag("MaxHpCrystal")) {
+            collectCrystalSound.Play();
+            Destroy(other.gameObject);
+            maxHealth = maxHealth + 10.0f;
         }
 
         if (other.gameObject.CompareTag("SecretEntrance"))
