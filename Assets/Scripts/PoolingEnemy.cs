@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 using UnityEngine.UI;
@@ -9,6 +10,8 @@ using UnityEngine.UI;
 public class PoolingEnemy : MonoBehaviour {
 
     [SerializeField] private GameObject enemy;
+
+    [SerializeField] List<GameObject> enemyList = new List<GameObject>();
 
     [SerializeField] private GameObject hpCrystal0;
 
@@ -34,15 +37,21 @@ public class PoolingEnemy : MonoBehaviour {
 
     private float dmgbuff = 1.0f;
 
-    private float hpbuff = 1.0f;
+    // private float hpbuff = 1.0f;
 
     private bool bonusSpawn = false;
 
 
     void Start() {
-        enemy.GetComponent<EnemyMovement>().Player = player;
+
+        for (int i = 0; i < enemyList.Capacity; i++) {
+            enemyList[i].GetComponent<EnemyMovement>().Player = player;
+        }
+
+
+        int rInt = r.Next(0, 2);
         score = GameObject.Find("Score").GetComponent<Text>();
-        spawnedEnemy = Instantiate(enemy, new Vector3(98, 0, 61), Quaternion.identity) as GameObject;
+        spawnedEnemy = Instantiate(enemyList[rInt], new Vector3(98, 0, 61), Quaternion.identity) as GameObject;
     }
 
     private void Update() {
@@ -73,20 +82,31 @@ public class PoolingEnemy : MonoBehaviour {
            
             int rInt = r.Next(0, 4);
 
+            int enemynumber = r.Next(0, 2);
+
+
             if (rInt == 0) {
-                spawnedEnemy = Instantiate(enemy, new Vector3(98, 0, 61), Quaternion.identity) as GameObject;
+                spawnedEnemy = Instantiate(enemyList[enemynumber], new Vector3(98, 0, 61), Quaternion.identity) as GameObject;
             } else if (rInt == 1) {
-                spawnedEnemy = Instantiate(enemy, new Vector3(80, 0, 78), Quaternion.identity) as GameObject;
+                spawnedEnemy = Instantiate(enemyList[enemynumber], new Vector3(80, 0, 78), Quaternion.identity) as GameObject;
             } else if (rInt == 2) {
-                spawnedEnemy = Instantiate(enemy, new Vector3(80, 0, 61), Quaternion.identity) as GameObject;
+                spawnedEnemy = Instantiate(enemyList[enemynumber], new Vector3(80, 0, 61), Quaternion.identity) as GameObject;
             } else if (rInt == 3) {
-                spawnedEnemy = Instantiate(enemy, new Vector3(98, 0, 78), Quaternion.identity) as GameObject;
+                spawnedEnemy = Instantiate(enemyList[enemynumber], new Vector3(98, 0, 78), Quaternion.identity) as GameObject;
             }
 
+
+            try {
+                spawnedEnemy.GetComponent<EnemyCombat>().damage = enemyList[enemynumber].GetComponent<EnemyCombat>().damage + dmgbuff * points;
+            } catch {
+                spawnedEnemy.GetComponent<AlienWithSwordCombat>().damage = enemyList[enemynumber].GetComponent<AlienWithSwordCombat>().damage + dmgbuff * points;
+            }
             //spawnedEnemy.transform.localScale = new Vector3(spawnedEnemy.transform.localScale.x * 1.05f, spawnedEnemy.transform.localScale.y * 1.05f, spawnedEnemy.transform.localScale.z * 1.05f);
             spawnedEnemy.GetComponent<EnemyDeath>().isDead = false;
             //spawnedEnemy.GetComponent<EnemyDeath>().health = enemy.GetComponent<EnemyDeath>().health + hpbuff*points;
-            spawnedEnemy.GetComponent<EnemyCombat>().damage = enemy.GetComponent<EnemyCombat>().damage + dmgbuff * points;
+
+
+
             spawnRecently = true;
             StartCoroutine(SpawnCD());
         }

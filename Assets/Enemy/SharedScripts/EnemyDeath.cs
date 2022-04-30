@@ -9,6 +9,7 @@ public class EnemyDeath : MonoBehaviour {
     private NavMeshAgent agent;
     private Animator anim;
     private EnemyCombat enemyCombat;
+    private AlienWithSwordCombat enemyCombatSword;
 
     Collider[] rigColliders;
     Rigidbody[] rigRigidbodies;
@@ -17,7 +18,9 @@ public class EnemyDeath : MonoBehaviour {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         enemyCombat = GetComponent<EnemyCombat>();
-       
+
+        enemyCombatSword = GetComponent<AlienWithSwordCombat>();
+
         rigColliders = GetComponentsInChildren<Collider>();
         rigRigidbodies = GetComponentsInChildren<Rigidbody>();
 
@@ -25,7 +28,13 @@ public class EnemyDeath : MonoBehaviour {
     }
     void Update() {
         if (health <= 0.0f) {
-            enemyCombat.CanAttack = false;
+
+            try {
+                enemyCombat.CanAttack = false;
+            } catch {
+                enemyCombatSword.CanAttack = false;
+            }
+
 
             if (anim.enabled == true) {
                 anim.enabled = false;
