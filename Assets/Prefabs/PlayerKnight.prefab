@@ -1099,7 +1099,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4391012323982547791}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.636, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3442,6 +3442,7 @@ GameObject:
   - component: {fileID: 6999878320931903381}
   - component: {fileID: 8145128167225125326}
   - component: {fileID: 6422089640836684864}
+  - component: {fileID: 2138328182}
   m_Layer: 0
   m_Name: PlayerKnight
   m_TagString: Player
@@ -3555,6 +3556,7 @@ MonoBehaviour:
   decceleration: 2
   maximumWalkVelocity: 0.5
   maximumRunVelocity: 2
+  swingSword: {fileID: 6422089640836684864}
 --- !u!114 &6999878320931903381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3597,7 +3599,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 36a8b7193377acf44a5c6ba0dbae1779, type: 3}
+  m_audioClip: {fileID: 8300000, guid: df6d6e6970d3ebc40a5ecbe1e1f21c1e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3683,3 +3685,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!81 &2138328182
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4391012325304713716}
+  m_Enabled: 1
