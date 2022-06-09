@@ -6,12 +6,19 @@ public class ThirdPersonMovement : MonoBehaviour
 {
     public CharacterController controller;
     public Transform cam;
+    private PauseScript ps;
 
     public float walkSpeed = 4.0f;
     public float runSpeed = 6.0f;
     public float turnSmoothTime = 0.1f;
     [SerializeField] float jumpheight;
     float turnSmoothVelocity;
+
+    private void Start()
+    {
+        ps = GameObject.Find("Pause").GetComponent<PauseScript>();
+        Debug.Log(ps.counter);
+    }
 
 
     void Update()
@@ -52,8 +59,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
         }
 
-
-
+        if(ps.counter <= 0) { 
 
         if (Cursor.lockState == CursorLockMode.None && Input.GetMouseButtonDown(0))
         {
@@ -63,7 +69,7 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
         }
+        }
 
-
-    }
+   }
 }

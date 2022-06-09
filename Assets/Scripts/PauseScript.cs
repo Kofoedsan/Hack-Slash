@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseScript : MonoBehaviour {
 
     bool ecp = false;
-    int counter = 0;
+    public int counter = 0;
 
     GameObject obj;
 
@@ -18,15 +19,15 @@ public class PauseScript : MonoBehaviour {
         ecp = Input.GetKeyDown(KeyCode.Escape);
 
         if (ecp == true && counter==0) {
-            Invoke("pausestart", 0.01f);
+            Invoke("PauseStart", 0.01f);
             obj.SetActive(true);
         }
 
         if (ecp == true && counter > 0 ) {
             ResumeGame();
-            obj.SetActive(false);
-            counter = 0;
         }
+
+
     }
 
     void PauseGame() {
@@ -35,11 +36,27 @@ public class PauseScript : MonoBehaviour {
 
     void ResumeGame() {
         Time.timeScale = 1;
+        obj.SetActive(false);
+        counter = 0;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
-    void pausestart() {
+    void PauseStart() {
         PauseGame();
         counter = 1;
+    }
+
+    public void ResumeGameButton()
+    {
+        ResumeGame();
+        
+    }
+
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene(0);
+        ResumeGame();
+        Cursor.lockState = CursorLockMode.None;
     }
 
 }
