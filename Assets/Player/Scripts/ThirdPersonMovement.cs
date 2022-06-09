@@ -17,7 +17,6 @@ public class ThirdPersonMovement : MonoBehaviour
     private void Start()
     {
         ps = GameObject.Find("Pause").GetComponent<PauseScript>();
-        Debug.Log(ps.counter);
     }
 
 

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour {
 
@@ -45,7 +46,8 @@ public class PlayerStats : MonoBehaviour {
                 rb.isKinematic = false;
             }
 
-            
+            Invoke("ResetMenu", 5);
+
         }
 
     }
@@ -98,5 +100,10 @@ public class PlayerStats : MonoBehaviour {
 
     }
 
+    void ResetMenu() {
+        SceneManager.LoadScene(0);
+        Cursor.lockState = CursorLockMode.None;
+
+    }
 
 }
