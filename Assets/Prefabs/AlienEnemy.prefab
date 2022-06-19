@@ -220,8 +220,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34cc964a9a4bfaa48ba4a1ee5b922d8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 4391012324596345974, guid: 97afc0e43f5a9764db3eb29ad304218d, type: 3}
-  aggroRangeRun: 20
+  Player: {fileID: 0}
+  aggroRangeRun: 30
   RunSpeed: 10
   WalkSpeed: 5
   aggroRangeWalk: 10
