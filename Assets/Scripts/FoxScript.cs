@@ -21,21 +21,70 @@ public class FoxScript : MonoBehaviour {
     [SerializeField] private float WalkSpeed;
 
     private bool sitting = false;
+    private PoolingEnemy enemy;
 
-    void Start(){
 
+    private bool IsAttacking = false;
+    private bool CanAttack = true;
+    private float AttackCD = 1.0f;
+    public float damage = 5.0f;
+
+
+    void Start() {
         navMeshAgent = GetComponent<NavMeshAgent>();
         stop = navMeshAgent.stoppingDistance;
         ChasingSpeedHash = Animator.StringToHash("Mix");
         animator = GetComponent<Animator>();
-
-
+        enemy = FindObjectOfType<PoolingEnemy>();
     }
 
 
-    void Update(){
+    void Update() {
+
+        if (enemy.spawnedEnemy != null) {
+            MoveToEnemy();
+        } else {
+            follow();
+        }
+
+    }
+
+    
+
+    void MoveToEnemy() {
+
+        Transform enemyPos = enemy.spawnedEnemy.GetComponent<Transform>();
+        if (Vector3.Distance(transform.position, enemyPos.position) < RangeRun && Vector3.Distance(transform.position, enemyPos.position) > RangeWalk) {
+            sitting = false;
+            if (ChasingSpeed < 1.0f) {
+                ChasingSpeed += Time.deltaTime * acceleration;
+            } else {
+                ChasingSpeed -= Time.deltaTime * decceleration;
+            }
+            animator.SetFloat(ChasingSpeedHash, ChasingSpeed);
+            navMeshAgent.speed = RunSpeed;
+            navMeshAgent.SetDestination(enemyPos.position);
+        }
+    }
+
+    void attack() {
+
+        animator.SetTrigger("atk");
+        IsAttacking = true;
+        CanAttack = false;
+        EnemyDeath enemyDeath = enemy.spawnedEnemy.GetComponent<EnemyDeath>();
+        enemyDeath.health = enemyDeath.health - damage;
+        StartCoroutine(ResetAttackCD());
+    }
+
+    IEnumerator ResetAttackCD() {
+        yield return new WaitForSeconds(AttackCD);
+        CanAttack = true;
+        IsAttacking = false;
+    }
 
 
+    void follow() {
         if (Vector3.Distance(transform.position, player.position) < RangeRun && Vector3.Distance(transform.position, player.position) > RangeWalk) {
             sitting = false;
 
@@ -73,12 +122,12 @@ public class FoxScript : MonoBehaviour {
         }
         if (Vector3.Distance(transform.position, player.position) < stop) {
 
-            if (ChasingSpeed > 0.05f&& !sitting) {
+            if (ChasingSpeed > 0.05f && !sitting) {
                 ChasingSpeed -= Time.deltaTime * decceleration;
             }
 
-            if (ChasingSpeed < 0.05f){
-                sitting = true; 
+            if (ChasingSpeed < 0.05f) {
+                sitting = true;
                 ChasingSpeed = 0.0f;
             }
 
@@ -86,13 +135,20 @@ public class FoxScript : MonoBehaviour {
             navMeshAgent.speed = 0.0f;
 
         }
-
-
-
-
     }
-
     void Chase() {
         navMeshAgent.SetDestination(player.position);
     }
+
+
+    private void OnTriggerStay(Collider other) {
+        if (other.tag == "Enemy" && CanAttack) {
+            attack();
+        }
+
+
+    }
 }
+
+
+

@@ -21,7 +21,7 @@ public class PoolingEnemy : MonoBehaviour {
 
     private Text score;
 
-    private GameObject spawnedEnemy;
+    public GameObject spawnedEnemy;
 
     private GameObject spawnedCrystal;
 
