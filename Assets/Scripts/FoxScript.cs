@@ -49,6 +49,7 @@ public class FoxScript : MonoBehaviour {
 
     }
 
+    
 
     void MoveToEnemy() {
 
