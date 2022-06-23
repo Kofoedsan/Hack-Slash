@@ -67,7 +67,7 @@ public class PlayerStats : MonoBehaviour {
         }
 
         if (other.gameObject.CompareTag("MaxHpCrystal")) {
-            //collectCrystalSound.Play();
+            collectCrystalSound.Play();
             Destroy(other.gameObject);
             maxHealth = maxHealth + 20.0f;
         }

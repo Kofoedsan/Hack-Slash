@@ -35,7 +35,11 @@ public class FoxScript : MonoBehaviour {
         stop = navMeshAgent.stoppingDistance;
         ChasingSpeedHash = Animator.StringToHash("Mix");
         animator = GetComponent<Animator>();
-        enemy = FindObjectOfType<PoolingEnemy>();
+        try {
+            enemy = FindObjectOfType<PoolingEnemy>();
+        }catch (System.Exception e) {
+            //Debug.LogError(e.Message);
+        }
     }
 
 
