@@ -3539,6 +3539,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+  allPillars: 3
+  currentPillars: 0
   isDead: 0
   collectCrystalSound: {fileID: 3868016982481878252}
 --- !u!114 &3602954789046539036
@@ -3557,7 +3559,7 @@ MonoBehaviour:
   decceleration: 2
   maximumWalkVelocity: 0.5
   maximumRunVelocity: 2
-  swingSword: {fileID: 3868016982481878252}
+  swingSword: {fileID: 6422089640836684864}
 --- !u!114 &6999878320931903381
 MonoBehaviour:
   m_ObjectHideFlags: 0
