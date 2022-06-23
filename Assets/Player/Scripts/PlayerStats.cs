@@ -6,6 +6,8 @@ public class PlayerStats : MonoBehaviour {
 
     [SerializeField] public float maxHealth = 100;
     public float currentHealth;
+    [SerializeField] public float allPillars = 3;
+    public float currentPillars;
     public bool isDead;
 
     CharacterController controller;
@@ -67,12 +69,12 @@ public class PlayerStats : MonoBehaviour {
         if (other.gameObject.CompareTag("MaxHpCrystal")) {
             collectCrystalSound.Play();
             Destroy(other.gameObject);
-            maxHealth = maxHealth + 10.0f;
+            maxHealth = maxHealth + 20.0f;
         }
 
         if (other.gameObject.CompareTag("SecretEntrance"))
         {
-
+            currentPillars = currentPillars + 1.0f;
             Destroy(other.gameObject);
         
         }
@@ -92,6 +94,13 @@ public class PlayerStats : MonoBehaviour {
         }
 
         if (other.gameObject.CompareTag("Saw"))
+        {
+
+            currentHealth = 0.0f;
+
+        }
+
+        if (other.gameObject.CompareTag("SwingAxe"))
         {
 
             currentHealth = 0.0f;

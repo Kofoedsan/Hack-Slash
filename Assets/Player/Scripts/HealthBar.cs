@@ -17,7 +17,7 @@ public class HealthBar : MonoBehaviour
     void Update() {
         healthText.text = stats.currentHealth.ToString()+"/"+ stats.maxHealth ;
 
-        if (stats.currentHealth == 100) {
+        if (stats.currentHealth >= 100) {
             imgColor.color = new Color32(0, 255, 0, 100);
         }
 
