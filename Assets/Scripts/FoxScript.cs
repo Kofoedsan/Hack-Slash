@@ -24,7 +24,6 @@ public class FoxScript : MonoBehaviour {
     private PoolingEnemy enemy;
 
 
-    private bool IsAttacking = false;
     private bool CanAttack = true;
     private float AttackCD = 1.0f;
     public float damage = 5.0f;
@@ -35,11 +34,7 @@ public class FoxScript : MonoBehaviour {
         stop = navMeshAgent.stoppingDistance;
         ChasingSpeedHash = Animator.StringToHash("Mix");
         animator = GetComponent<Animator>();
-        try {
-            enemy = FindObjectOfType<PoolingEnemy>();
-        }catch (System.Exception e) {
-            //Debug.LogError(e.Message);
-        }
+        enemy = FindObjectOfType<PoolingEnemy>();
     }
 
 
@@ -74,7 +69,6 @@ public class FoxScript : MonoBehaviour {
     void attack() {
 
         animator.SetTrigger("atk");
-        IsAttacking = true;
         CanAttack = false;
         EnemyDeath enemyDeath = enemy.spawnedEnemy.GetComponent<EnemyDeath>();
         enemyDeath.health = enemyDeath.health - damage;
@@ -84,7 +78,6 @@ public class FoxScript : MonoBehaviour {
     IEnumerator ResetAttackCD() {
         yield return new WaitForSeconds(AttackCD);
         CanAttack = true;
-        IsAttacking = false;
     }
 
 
@@ -149,8 +142,6 @@ public class FoxScript : MonoBehaviour {
         if (other.tag == "Enemy" && CanAttack) {
             attack();
         }
-
-
     }
 }
 

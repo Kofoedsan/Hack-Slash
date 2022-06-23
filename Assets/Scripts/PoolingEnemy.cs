@@ -61,10 +61,10 @@ public class PoolingEnemy : MonoBehaviour {
 
                 int rInt = r.Next(0, 2);
                 if (rInt == 0) {
-                    spawnedCrystal = Instantiate(hpCrystal0, new Vector3(90, 0, 70), Quaternion.identity) as GameObject;
+                    spawnedCrystal = Instantiate(hpCrystal0, new Vector3(90, 1, 70), Quaternion.identity) as GameObject;
 
                 } else if (rInt == 1) {
-                    spawnedCrystal = Instantiate(hpCrystal1, new Vector3(90, 0, 70), Quaternion.identity) as GameObject;
+                    spawnedCrystal = Instantiate(hpCrystal1, new Vector3(90, 1, 70), Quaternion.identity) as GameObject;
                 }
                 bonusSpawn = true;
                 bonuslevel = points +5;
@@ -72,8 +72,7 @@ public class PoolingEnemy : MonoBehaviour {
             }
         } else {
             bonusSpawn = false;
-        }
-           
+        }          
 
         if (spawnedEnemy.GetComponent<EnemyDeath>().isDead && !spawnRecently) {
             points++;
